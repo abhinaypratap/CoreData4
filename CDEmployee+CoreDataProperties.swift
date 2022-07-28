@@ -16,7 +16,7 @@ extension CDEmployee {
         return NSFetchRequest<CDEmployee>(entityName: "CDEmployee")
     }
 
-    @NSManaged public var profilePic: Data?
+    @NSManaged public var profilePicture: Data?
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
     @NSManaged public var email: String?

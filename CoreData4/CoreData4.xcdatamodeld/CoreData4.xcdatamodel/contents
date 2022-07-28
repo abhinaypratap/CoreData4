@@ -4,9 +4,9 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="profilePic" optional="YES" attributeType="Binary"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
-        <element name="CDEmployee" positionX="-45" positionY="0" width="128" height="89"/>
+        <element name="CDEmployee" positionX="-36" positionY="9" width="128" height="89"/>
     </elements>
 </model>
