@@ -7,11 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CreateEmployeeVC: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         debugPrint(path[0])
+    }
+    @IBAction func didTapCreate(_ sender: UIButton) {
     }
 }
