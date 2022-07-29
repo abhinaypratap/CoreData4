@@ -13,7 +13,7 @@ protocol EmployeeRepository {
     func getAll() -> [Employee]?
     func get(byIdentifier id: UUID) -> Employee?
     func update(employee: Employee) -> Bool
-    func delete(record: Employee) -> Bool
+    func delete(byIdentifier id: UUID) -> Bool
 }
 
 struct EmployeeDataRepository: EmployeeRepository {
@@ -55,8 +55,8 @@ struct EmployeeDataRepository: EmployeeRepository {
         return true
     }
     
-    func delete(record: Employee) -> Bool {
-        let cdEmployee = getCDEmployee(byIdentifier: record.id)
+    func delete(byIdentifier id: UUID) -> Bool {
+        let cdEmployee = getCDEmployee(byIdentifier: id)
         guard cdEmployee != nil else { return false }
         
         PersistentStorage.shared.context.delete(cdEmployee!)
