@@ -12,8 +12,8 @@ protocol EmployeeRepository {
     func create(employee: Employee)
     func getAll() -> [Employee]?
     func get(byIdentifier id: UUID) -> Employee?
-    func update(employee: Employee)
-    func delete(employee: Employee)
+    func update(employee: Employee) -> Bool
+    func delete(record: Employee) -> Bool
 }
 
 struct EmployeeDataRepository: EmployeeRepository {
@@ -38,6 +38,32 @@ struct EmployeeDataRepository: EmployeeRepository {
         return employees
     }
     func get(byIdentifier id: UUID) -> Employee? {
+        let result = getCDEmployee(byIdentifier: id)
+        guard result != nil else {return nil}
+        return result?.convertToEmployee()
+    }
+    
+    func update(employee: Employee) -> Bool {
+        let cdEmployee = getCDEmployee(byIdentifier: employee.id)
+        guard cdEmployee != nil else { return false }
+        
+        cdEmployee?.name = employee.name
+        cdEmployee?.email = employee.email
+        cdEmployee?.profilePicture = employee.profilePicture
+        
+        PersistentStorage.shared.saveContext()
+        return true
+    }
+    
+    func delete(record: Employee) -> Bool {
+        let cdEmployee = getCDEmployee(byIdentifier: record.id)
+        guard cdEmployee != nil else { return false }
+        
+        PersistentStorage.shared.context.delete(cdEmployee!)
+        return true
+    }
+    
+    func getCDEmployee(byIdentifier id: UUID) -> CDEmployee? {
         let fetchRequest = NSFetchRequest<CDEmployee>(entityName: "CDEmployee")
         let predicate = NSPredicate(format: "id==%@", id as CVarArg)
         
@@ -45,17 +71,10 @@ struct EmployeeDataRepository: EmployeeRepository {
         do {
             let result = try PersistentStorage.shared.context.fetch(fetchRequest).first
             guard result != nil else { return nil }
-            return result?.convertToEmployee()
+            return result
         } catch {
             debugPrint(error)
         }
-    }
-    
-    func update(employee: Employee) {
-        <#code#>
-    }
-    
-    func delete(employee: Employee) {
-        <#code#>
+        return nil
     }
 }
