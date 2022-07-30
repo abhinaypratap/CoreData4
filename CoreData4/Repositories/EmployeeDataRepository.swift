@@ -10,7 +10,7 @@ import CoreData
 
 protocol EmployeeRepository {
     func create(employee: Employee)
-    func getAll() -> [Employee]?
+    func getAll() -> [Employee]
     func get(byIdentifier id: UUID) -> Employee?
     func update(employee: Employee) -> Bool
     func delete(byIdentifier id: UUID) -> Bool
@@ -28,7 +28,7 @@ struct EmployeeDataRepository: EmployeeRepository {
         PersistentStorage.shared.saveContext()
     }
     
-    func getAll() -> [Employee]? {
+    func getAll() -> [Employee] {
         
         let result = PersistentStorage.shared.fetchManagedObject(managedObject: CDEmployee.self)
         var employees = [Employee]()
@@ -60,6 +60,7 @@ struct EmployeeDataRepository: EmployeeRepository {
         guard cdEmployee != nil else { return false }
         
         PersistentStorage.shared.context.delete(cdEmployee!)
+        PersistentStorage.shared.saveContext()
         return true
     }
     
