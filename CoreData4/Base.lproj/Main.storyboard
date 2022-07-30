@@ -35,12 +35,12 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ddg-8q-PDO">
                                         <rect key="frame" x="10" y="110" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VPh-oW-qsb">
                                         <rect key="frame" x="10" y="154" width="330" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -57,7 +57,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Create"/>
                                 <connections>
                                     <action selector="didTapCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IgP-dP-omj"/>
-                                    <segue destination="Ql6-RZ-E9f" kind="show" id="Zb3-qk-6Y6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,17 +77,18 @@
                     <connections>
                         <outlet property="emailTextField" destination="VPh-oW-qsb" id="bJ3-Kx-MGK"/>
                         <outlet property="nameTextField" destination="Ddg-8q-PDO" id="w90-pu-VEH"/>
-                        <outlet property="profilePictureImageView" destination="oAz-0f-v2R" id="Z2n-dd-3or"/>
+                        <outlet property="profilePictureImageView" destination="oAz-0f-v2R" id="K2A-ZZ-362"/>
+                        <segue destination="Ql6-RZ-E9f" kind="show" identifier="EmployeeListVC" id="Dsj-Er-zj4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963.07692307692309" y="85.308056872037909"/>
         </scene>
-        <!--View Controller-->
+        <!--Employee ListVC-->
         <scene sceneID="vhU-9J-gJq">
             <objects>
-                <viewController id="Ql6-RZ-E9f" sceneMemberID="viewController">
+                <viewController id="Ql6-RZ-E9f" customClass="EmployeeListVC" customModule="CoreData4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V0m-mZ-aXb">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FDF-mk-0hz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="FDF-mk-0hz" customClass="EmployeeListCell" customModule="CoreData4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="75.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FDF-mk-0hz" id="fPd-K3-rZW">
@@ -137,6 +137,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="yzt-n9-tKQ" secondAttribute="bottom" id="ps5-bR-Or6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailLabel" destination="oTN-wq-AOm" id="nMZ-G3-Tek"/>
+                                            <outlet property="nameLabel" destination="4Qc-8r-fdB" id="hWX-Wg-bms"/>
+                                            <outlet property="profilePictureImageView" destination="yzt-n9-tKQ" id="HMb-Z4-LBG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -146,17 +151,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="iAV-dK-OX6"/>
                     <connections>
-                        <segue destination="dyF-sP-Z1F" kind="show" id="0ce-7Z-ZLQ"/>
+                        <outlet property="employeeTableView" destination="5qb-RP-woc" id="Xwi-J9-aBh"/>
+                        <segue destination="dyF-sP-Z1F" kind="show" identifier="EmployeeDetailVC" id="pdc-tv-Wnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4i-xB-xPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907.6923076923076" y="60.426540284360186"/>
+            <point key="canvasLocation" x="1905" y="85"/>
         </scene>
-        <!--View Controller-->
+        <!--Employee DetailVC-->
         <scene sceneID="ipr-G3-cka">
             <objects>
-                <viewController id="dyF-sP-Z1F" sceneMemberID="viewController">
+                <viewController id="dyF-sP-Z1F" customClass="EmployeeDetailVC" customModule="CoreData4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KWh-LT-c89">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +210,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Update"/>
                                         <connections>
-                                            <action selector="didTapCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgS-m0-dp1"/>
+                                            <action selector="didTapUpdate:" destination="dyF-sP-Z1F" eventType="touchUpInside" id="n54-sA-LtL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-ye-0wx">
@@ -215,7 +221,7 @@
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="didTapCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y6c-YO-7bx"/>
+                                            <action selector="didTapDelete:" destination="dyF-sP-Z1F" eventType="touchUpInside" id="H1z-K2-LmZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -237,10 +243,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gLL-Wu-aPd"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="UOV-w1-fvb" id="nHF-xF-sz7"/>
+                        <outlet property="nameTextField" destination="E19-Ev-ROH" id="3l9-LE-s3r"/>
+                        <outlet property="profilePictureImageView" destination="xFH-Zf-aS5" id="jVx-fJ-AhW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tik-OK-AHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="60"/>
+            <point key="canvasLocation" x="2737" y="85"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="myN-Cu-WSa">

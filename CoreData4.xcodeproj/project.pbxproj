@@ -22,10 +22,10 @@
 		3BA30DE72893B234003A3526 /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DE62893B234003A3526 /* EmployeeManager.swift */; };
 		3BA30DE92893BB56003A3526 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DE82893BB56003A3526 /* Constant.swift */; };
 		3BA30DEB2893FF25003A3526 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DEA2893FF25003A3526 /* EmployeeListVC.swift */; };
-		3BA30DED2893FF53003A3526 /* EmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DEC2893FF53003A3526 /* EmployeeListCell.swift */; };
 		3BA30DEF2893FF81003A3526 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DEE2893FF81003A3526 /* EmployeeDetailVC.swift */; };
 		3BA30DF128940046003A3526 /* EmployeeDetailVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DF028940046003A3526 /* EmployeeDetailVC+Extension.swift */; };
 		3BA30DF32894005E003A3526 /* EmployeeListVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DF22894005E003A3526 /* EmployeeListVC+Extension.swift */; };
+		3BA30DF5289428C9003A3526 /* EmployeeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA30DF4289428C9003A3526 /* EmployeeListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +46,10 @@
 		3BA30DE62893B234003A3526 /* EmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
 		3BA30DE82893BB56003A3526 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3BA30DEA2893FF25003A3526 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
-		3BA30DEC2893FF53003A3526 /* EmployeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCell.swift; sourceTree = "<group>"; };
 		3BA30DEE2893FF81003A3526 /* EmployeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailVC.swift; sourceTree = "<group>"; };
 		3BA30DF028940046003A3526 /* EmployeeDetailVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeDetailVC+Extension.swift"; sourceTree = "<group>"; };
 		3BA30DF22894005E003A3526 /* EmployeeListVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeListVC+Extension.swift"; sourceTree = "<group>"; };
+		3BA30DF4289428C9003A3526 /* EmployeeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,6 @@
 		3BA30D692892D131003A3526 = {
 			isa = PBXGroup;
 			children = (
-				3BA30DE82893BB56003A3526 /* Constant.swift */,
 				3BA30D742892D131003A3526 /* CoreData4 */,
 				3BA30D732892D131003A3526 /* Products */,
 			);
@@ -90,6 +89,7 @@
 				3BA30DD428931453003A3526 /* Repositories */,
 				3BA30D752892D131003A3526 /* AppDelegate.swift */,
 				3BA30D772892D131003A3526 /* SceneDelegate.swift */,
+				3BA30DE82893BB56003A3526 /* Constant.swift */,
 				3BA30D7B2892D131003A3526 /* Main.storyboard */,
 				3BA30D7E2892D135003A3526 /* Assets.xcassets */,
 				3BA30D802892D135003A3526 /* LaunchScreen.storyboard */,
@@ -113,8 +113,8 @@
 				3BA30DD328931449003A3526 /* Extensions */,
 				3BA30D792892D131003A3526 /* CreateEmployeeVC.swift */,
 				3BA30DEA2893FF25003A3526 /* EmployeeListVC.swift */,
-				3BA30DEC2893FF53003A3526 /* EmployeeListCell.swift */,
 				3BA30DEE2893FF81003A3526 /* EmployeeDetailVC.swift */,
+				3BA30DF4289428C9003A3526 /* EmployeeListCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,7 +229,6 @@
 				3BA30DEB2893FF25003A3526 /* EmployeeListVC.swift in Sources */,
 				3BA30DDD28931BAF003A3526 /* CoreData4.xcdatamodeld in Sources */,
 				3BA30DE528932018003A3526 /* Employee.swift in Sources */,
-				3BA30DED2893FF53003A3526 /* EmployeeListCell.swift in Sources */,
 				3BA30DE328931E5B003A3526 /* EmployeeDataRepository.swift in Sources */,
 				3BA30DF32894005E003A3526 /* EmployeeListVC+Extension.swift in Sources */,
 				3BA30DE72893B234003A3526 /* EmployeeManager.swift in Sources */,
@@ -239,6 +238,7 @@
 				3BA30D782892D131003A3526 /* SceneDelegate.swift in Sources */,
 				3BA30DE92893BB56003A3526 /* Constant.swift in Sources */,
 				3BA30DEF2893FF81003A3526 /* EmployeeDetailVC.swift in Sources */,
+				3BA30DF5289428C9003A3526 /* EmployeeListCell.swift in Sources */,
 				3BA30DE028931C10003A3526 /* CDEmployee+CoreDataClass.swift in Sources */,
 				3BA30DD02892D409003A3526 /* PersistentStorage.swift in Sources */,
 			);

@@ -11,4 +11,5 @@ import Foundation
 struct K {
     static let employeeListVC = "EmployeeListVC"
     static let employeeDetailVC = "EmployeeDetailVC"
+    static let employeetableViewCell = "cell"
 }
