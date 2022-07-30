@@ -16,7 +16,7 @@ struct EmployeeManager {
         _employeeDataRepository.create(employee: employee)
     }
     
-    func fetchEmployee() -> [Employee]? {
+    func fetchEmployee() -> [Employee] {
         _employeeDataRepository.getAll()
     }
     
